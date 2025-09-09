@@ -195,4 +195,129 @@
             <img class="profile-pic" id="profilePic" src="Carlitos.jpg" alt="Foto de perfil">
         </div>
         <input type="file" id="imageInput" style="display: none;">
-        <h1 id="userName">He
+        <h1 id="userName">Heber Manrique</h1>
+    </div>
+
+    <div class="buttons-container">
+        <a href="https://www.instagram.com/indesasoft/" target="_blank" class="btn" id="instagramBtn">Instagram</a>
+        <a href="#" target="_blank" class="btn" id="facebookBtn">Facebook</a>
+        <a href="#" target="_blank" class="btn" id="linkedinBtn">LinkedIn</a>
+    </div>
+
+</div>
+
+<div class="settings-panel" id="settingsPanel">
+    <h2>Configuración de URLs</h2>
+    <label for="instagramUrl">URL de Instagram:</label>
+    <input type="text" id="instagramUrl" placeholder="https://www.instagram.com/tu_usuario/">
+
+    <label for="facebookUrl">URL de Facebook:</label>
+    <input type="text" id="facebookUrl" placeholder="https://www.facebook.com/tu_usuario/">
+
+    <label for="linkedinUrl">URL de LinkedIn:</label>
+    <input type="text" id="linkedinUrl" placeholder="https://www.linkedin.com/in/tu_perfil/">
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const profilePicContainer = document.getElementById('profilePicContainer');
+        const profilePic = document.getElementById('profilePic');
+        const imageInput = document.getElementById('imageInput');
+        const settingsIcon = document.getElementById('settingsIcon');
+        const settingsPanel = document.getElementById('settingsPanel');
+        const instagramUrlInput = document.getElementById('instagramUrl');
+        const facebookUrlInput = document.getElementById('facebookUrl');
+        const linkedinUrlInput = document.getElementById('linkedinUrl');
+        const instagramBtn = document.getElementById('instagramBtn');
+        const facebookBtn = document.getElementById('facebookBtn');
+        const linkedinBtn = document.getElementById('linkedinBtn');
+        const userName = document.getElementById('userName');
+
+        // Función para cargar los datos desde Local Storage
+        const loadData = () => {
+            const savedPic = localStorage.getItem('profilePic');
+            const savedFacebookUrl = localStorage.getItem('facebookUrl');
+            const savedLinkedinUrl = localStorage.getItem('linkedinUrl');
+
+            if (savedPic) {
+                profilePic.src = savedPic;
+            }
+
+            // URL de Instagram Fija
+            instagramUrlInput.value = "https://www.instagram.com/indesasoft/";
+            instagramBtn.href = "https://www.instagram.com/indesasoft/";
+
+            if (savedFacebookUrl) {
+                facebookUrlInput.value = savedFacebookUrl;
+                facebookBtn.href = savedFacebookUrl;
+            } else {
+                facebookUrlInput.value = "";
+            }
+
+            if (savedLinkedinUrl) {
+                linkedinUrlInput.value = savedLinkedinUrl;
+                linkedinBtn.href = savedLinkedinUrl;
+            } else {
+                linkedinUrlInput.value = "";
+            }
+            
+            // Título fijo "Heber Manrique"
+            userName.textContent = "Heber Manrique";
+        };
+
+        // Función para guardar los datos en Local Storage
+        const saveData = () => {
+            localStorage.setItem('facebookUrl', facebookUrlInput.value);
+            localStorage.setItem('linkedinUrl', linkedinUrlInput.value);
+        };
+
+        // Escuchar el click en el contenedor de la foto para abrir el selector de archivo
+        profilePicContainer.addEventListener('click', () => {
+            imageInput.click();
+        });
+
+        // Manejar la selección de la imagen
+        imageInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const imageUrl = e.target.result;
+                    profilePic.src = imageUrl;
+                    localStorage.setItem('profilePic', imageUrl);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Manejar el click en el icono de configuración
+        settingsIcon.addEventListener('click', (e) => {
+            e.stopPropagation();
+            settingsPanel.classList.toggle('visible');
+        });
+
+        // Ocultar el panel de configuración si se hace clic fuera de él
+        document.body.addEventListener('click', (e) => {
+            if (!settingsPanel.contains(e.target) && !settingsIcon.contains(e.target) && settingsPanel.classList.contains('visible')) {
+                settingsPanel.classList.remove('visible');
+            }
+        });
+
+        // Actualizar los enlaces en tiempo real y guardar los cambios
+        instagramUrlInput.addEventListener('input', saveData);
+        facebookUrlInput.addEventListener('input', () => {
+            facebookBtn.href = facebookUrlInput.value;
+            saveData();
+        });
+        linkedinUrlInput.addEventListener('input', () => {
+            linkedinBtn.href = linkedinUrlInput.value;
+            saveData();
+        });
+
+        // Cargar los datos al iniciar la página
+        loadData();
+    });
+</script>
+
+</body>
+</html>
