@@ -3,77 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta Digital Heber Manrique</title>
+    <title>Heber Manrique</title>
     <style>
-        /* Estilos generales y fondo */
         body {
-            font-family: sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #D2B48C; /* Fondo marrón claro */
+            background: linear-gradient(135deg, #d2b48c, #8b4513);
             color: #333;
-            transition: all 0.3s ease;
         }
 
-        /* Contenedor principal de la tarjeta */
-        .card-container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.2);
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background-color: white;
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            max-width: 400px;
-            width: 90%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
             position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
-        /* Foto de perfil */
-        .profile-pic-container {
-            position: relative;
-            width: 150px;
-            height: 150px;
-            margin-bottom: 20px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid white;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .profile-pic {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Icono de configuración */
         .settings-icon {
             position: absolute;
             top: 15px;
             left: 15px;
             font-size: 24px;
             cursor: pointer;
-            z-index: 10;
         }
 
-        /* Título */
         h1 {
-            margin: 0 0 20px 0;
-            font-size: 2em;
-            color: black; /* Título de color negro */
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+            color: #333;
+            margin-bottom: 20px;
         }
 
-        /* Contenedor de botones */
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-image-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 3px solid #ccc;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .buttons-container {
             display: flex;
             flex-direction: column;
@@ -81,215 +69,75 @@
             width: 100%;
         }
 
-        /* Estilo de los botones */
-        .btn {
-            padding: 12px 25px;
-            border: 2px solid white;
-            border-radius: 30px;
-            background: transparent;
-            color: white;
-            text-decoration: none;
-            font-size: 1.1em;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.2s;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Panel de configuración (inicialmente oculto) */
-        .settings-panel {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            max-width: 400px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            z-index: 20;
-            display: none; /* Oculto por defecto */
-        }
-
-        .settings-panel.visible {
-            display: block; /* Visible cuando se le añade la clase 'visible' */
-        }
-
-        .settings-panel label {
+        .social-button {
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .settings-panel input {
-            width: calc(100% - 20px);
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .settings-panel h2 {
-            margin-top: 0;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            text-decoration: none;
             color: #333;
+            background-color: white;
+            border: 2px solid #fff;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        /* Media queries para responsividad */
-        @media (min-width: 600px) {
-            .card-container {
-                flex-direction: row;
-                justify-content: space-around;
-                max-width: 700px;
-                padding: 40px;
-            }
-
-            .profile-pic-container {
-                margin-right: 40px;
-                margin-bottom: 0;
-            }
-
-            .buttons-container {
-                align-items: flex-start;
-            }
+        .social-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* Gira el diseño en mobile (landscape) */
-        @media (orientation: landscape) and (max-width: 900px) {
-            .card-container {
+        /* Colores específicos para los botones */
+        .instagram {
+            background: #e1306c;
+            color: white;
+        }
+
+        .facebook {
+            background: #3b5998;
+            color: white;
+        }
+
+        .linkedin {
+            background: #0077b5;
+            color: white;
+        }
+
+        /* Media queries para modo responsive y rotación */
+        @media (min-width: 600px) and (orientation: landscape) {
+            .profile-section {
                 flex-direction: row;
                 justify-content: center;
-                align-items: center;
                 gap: 40px;
             }
 
             .buttons-container {
                 flex-direction: column;
-                align-items: flex-start;
-                margin-left: auto; /* Mueve los botones a la derecha */
-            }
-
-            h1 {
-                position: absolute;
-                top: 20px;
-                left: 50%;
-                transform: translateX(-50%);
+                justify-content: center;
+                width: auto;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="card-container">
-    <div class="settings-icon" id="settingsIcon">
-        ⚙️
-    </div>
+<div class="container">
+    <div class="settings-icon">&#9881;</div>
+    
+    <h1>Heber Manrique</h1>
 
-    <div class="profile-pic-area">
-        <div class="profile-pic-container">
-            <img class="profile-pic" src="Carlitos.jpg" alt="Foto de perfil">
+    <div class="profile-section">
+        <div class="profile-image-container">
+            <img src="https://via.placeholder.com/150" alt="Foto de perfil" class="profile-image">
+        </div>
+        <div class="buttons-container">
+            <a href="https://www.instagram.com/indesasoft/" target="_blank" class="social-button instagram">Instagram</a>
+            <a href="https://www.facebook.com/" target="_blank" class="social-button facebook">Facebook</a>
+            <a href="https://www.linkedin.com/" target="_blank" class="social-button linkedin">LinkedIn</a>
         </div>
     </div>
-    
-    <h1 id="userName">Heber Manrique</h1>
-
-    <div class="buttons-container">
-        <a href="https://www.instagram.com/indesasoft/" target="_blank" class="btn" id="instagramBtn">Instagram</a>
-        <a href="#" target="_blank" class="btn" id="facebookBtn">Facebook</a>
-        <a href="#" target="_blank" class="btn" id="linkedinBtn">LinkedIn</a>
-    </div>
-
 </div>
-
-<div class="settings-panel" id="settingsPanel">
-    <h2>Configuración de URLs</h2>
-    <label for="instagramUrl">URL de Instagram:</label>
-    <input type="text" id="instagramUrl" placeholder="https://www.instagram.com/tu_usuario/">
-
-    <label for="facebookUrl">URL de Facebook:</label>
-    <input type="text" id="facebookUrl" placeholder="https://www.facebook.com/tu_usuario/">
-
-    <label for="linkedinUrl">URL de LinkedIn:</label>
-    <input type="text" id="linkedinUrl" placeholder="https://www.linkedin.com/in/tu_perfil/">
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const settingsIcon = document.getElementById('settingsIcon');
-        const settingsPanel = document.getElementById('settingsPanel');
-        const instagramUrlInput = document.getElementById('instagramUrl');
-        const facebookUrlInput = document.getElementById('facebookUrl');
-        const linkedinUrlInput = document.getElementById('linkedinUrl');
-        const instagramBtn = document.getElementById('instagramBtn');
-        const facebookBtn = document.getElementById('facebookBtn');
-        const linkedinBtn = document.getElementById('linkedinBtn');
-        const userName = document.getElementById('userName');
-
-        // Función para cargar los datos desde Local Storage
-        const loadData = () => {
-            const savedFacebookUrl = localStorage.getItem('facebookUrl');
-            const savedLinkedinUrl = localStorage.getItem('linkedinUrl');
-
-            // URL de Instagram Fija
-            instagramUrlInput.value = "https://www.instagram.com/indesasoft/";
-            instagramBtn.href = "https://www.instagram.com/indesasoft/";
-
-            if (savedFacebookUrl) {
-                facebookUrlInput.value = savedFacebookUrl;
-                facebookBtn.href = savedFacebookUrl;
-            } else {
-                facebookUrlInput.value = "";
-            }
-
-            if (savedLinkedinUrl) {
-                linkedinUrlInput.value = savedLinkedinUrl;
-                linkedinBtn.href = savedLinkedinUrl;
-            } else {
-                linkedinUrlInput.value = "";
-            }
-            
-            // Título fijo "Heber Manrique"
-            userName.textContent = "Heber Manrique";
-        };
-
-        // Función para guardar los datos en Local Storage
-        const saveData = () => {
-            localStorage.setItem('facebookUrl', facebookUrlInput.value);
-            localStorage.setItem('linkedinUrl', linkedinUrlInput.value);
-        };
-
-        // Manejar el click en el icono de configuración
-        settingsIcon.addEventListener('click', (e) => {
-            e.stopPropagation();
-            settingsPanel.classList.toggle('visible');
-        });
-
-        // Ocultar el panel de configuración si se hace clic fuera de él
-        document.body.addEventListener('click', (e) => {
-            if (!settingsPanel.contains(e.target) && !settingsIcon.contains(e.target) && settingsPanel.classList.contains('visible')) {
-                settingsPanel.classList.remove('visible');
-            }
-        });
-
-        // Actualizar los enlaces en tiempo real y guardar los cambios
-        instagramUrlInput.addEventListener('input', saveData);
-        facebookUrlInput.addEventListener('input', () => {
-            facebookBtn.href = facebookUrlInput.value;
-            saveData();
-        });
-        linkedinUrlInput.addEventListener('input', () => {
-            linkedinBtn.href = linkedinUrlInput.value;
-            saveData();
-        });
-
-        // Cargar los datos al iniciar la página
-        loadData();
-    });
-</script>
 
 </body>
 </html>
