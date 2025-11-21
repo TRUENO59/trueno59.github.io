@@ -1,158 +1,113 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="transition duration-300">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heber Manrique 1.3</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #d2b48c, #8b4513);
-            color: #333;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 400px;
-            background-color: #9EE4F7;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 4, 213, 1);
-            text-align: center;
-            position: relative;
-        }
-
-        .settings-icon {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .profile-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .profile-image-container {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-bottom: 20px;
-            border: 3px solid #ccc;
-        }
-
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .buttons-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            width: 100%;
-        }
-
-        .social-button {
-            display: block;
-            width: 90%;
-            padding: 12px;
-            font-size: 16px;
-            text-decoration: none;
-            color: #333;
-            background-color: white;
-            border: 2px solid #fff;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Colores específicos para los botones */
-        .instagram {
-            background: #e1306c;
-            color: white;
-        }
-
-        .facebook {
-            background: #3b5998;
-            color: white;
-        }
-
-        .linkedin {
-            background: #854442;
-            color: white;
-        }
-
-        /* Media queries para modo responsive y rotación */
-        @media (min-width: 600px) and (orientation: landscape) {
-            .profile-section {
-                flex-direction: row;
-                justify-content: center;
-                gap: 40px;
-            }
-
-            .buttons-container {
-                flex-direction: column;
-                justify-content: center;
-                width: auto;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeta de Presentación Digital</title>
+  <!-- CDN de Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <style>
+    /* Animación personalizada para el borde gradiente */
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+      animation: spin-slow 10s linear infinite;
+    }
+  </style>
 </head>
-<body>
+<body class="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 transition duration-300">
 
-<div class="container">
-    <!-- <div class="settings-icon">&#9881;</div> -->
+  <!-- Contenedor principal -->
+  <div id="card" class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-8 max-w-sm w-full text-center transition duration-300">
     
-    <h1>Heber Manrique</h1>
-
-    <div class="profile-section">
-        <div class="profile-image-container">
-            <!-- <img src="https://via.placeholder.com/150" alt="Foto de perfil" class="profile-image"> -->
-            <img src="Carlitos.png" alt="Foto de perfil" class="profile-image">
-        </div>
-        <div class="buttons-container">
-            <a href="https://www.instagram.com/indesasoft/" target="_blank" class="social-button instagram">Instagram</a>
-            <a href="https://www.facebook.com/" target="_blank" class="social-button facebook">Facebook</a>
-            <a href="https://www.linkedin.com/" target="_blank" class="social-button linkedin">LinkedIn</a>
-        </div>
+    <!-- Foto de perfil con borde gradiente animado -->
+    <div class="flex justify-center mb-6">
+      <div class="relative w-36 h-36 rounded-full p-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 animate-spin-slow">
+        <img src="Carlitos.png" 
+             alt="Foto de perfil" 
+             class="w-full h-full rounded-full border-4 border-white dark:border-gray-800 shadow-md object-cover">
+      </div>
     </div>
-</div>
 
+    <!-- Nombre y ocupación -->
+    <h1 class="text-2xl font-bold text-gray-900 dark:text-gray-100">Juan Pérez</h1>
+    <p class="text-gray-600 dark:text-gray-300">Desarrollador Front-End</p>
+    <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+      Apasionado por crear interfaces modernas y funcionales usando HTML, CSS, Tailwind y JavaScript.
+    </p>
+
+    <!-- Código QR -->
+    <div class="mt-6 flex justify-center">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.linkedin.com/in/usuario" 
+           alt="Código QR" class="rounded-md shadow-md">
+    </div>
+
+    <!-- Iconos de redes sociales -->
+    <div class="mt-6 flex justify-center space-x-6">
+      <a href="https://github.com/usuario" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition">
+        <!-- Icono GitHub -->
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.7 2.1 3.9 1.5v-2.2c0-.3.2-.7.8-.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/>
+        </svg>
+      </a>
+      <a href="https://linkedin.com/in/usuario" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition">
+        <!-- Icono LinkedIn -->
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1 4.98 2.1 4.98 3.5zM.5 8h4V24h-4V8zm7.5 0h3.7v2.2h.1c.5-.9 1.7-2.2 3.6-2.2 3.9 0 4.6 2.6 4.6 6V24h-4v-8.3c0-2-.1-4.6-2.8-4.6-2.8 0-3.2 2.2-3.2 4.5V24h-4V8z"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Controles -->
+    <div class="mt-8 space-y-4">
+      <!-- Botón de cambio de tema -->
+      <button id="themeToggle" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md shadow transition duration-300">
+        Cambiar Tema
+      </button>
+
+      <!-- Selector de fondo de tarjeta -->
+      <select id="backgroundSelect" class="w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition duration-300">
+        <option value="bg-white dark:bg-gray-800">Fondo Blanco/Gris Oscuro</option>
+        <option value="bg-gradient-to-r from-blue-400 to-purple-500">Gradiente Azul-Púrpura</option>
+        <option value="bg-gradient-to-r from-green-400 to-teal-500">Gradiente Verde-Teal</option>
+        <option value="bg-gradient-to-r from-pink-400 to-red-500">Gradiente Rosa-Rojo</option>
+      </select>
+    </div>
+  </div>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const backgroundSelect = document.getElementById('backgroundSelect');
+    const htmlElement = document.documentElement;
+    const card = document.getElementById('card');
+
+    // Botón de cambio de tema
+    themeToggle.addEventListener('click', () => {
+      htmlElement.classList.toggle('dark');
+      if (htmlElement.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Aplicar tema guardado
+    if (localStorage.getItem('theme') === 'dark') {
+      htmlElement.classList.add('dark');
+    }
+
+    // Cambio de fondo de la tarjeta
+    backgroundSelect.addEventListener('change', (e) => {
+      card.className = "shadow-lg rounded-xl p-8 max-w-sm w-full text-center transition duration-300";
+      card.classList.add(...e.target.value.split(" "));
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
