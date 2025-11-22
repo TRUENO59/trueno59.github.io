@@ -1,105 +1,79 @@
 <!DOCTYPE html>
-<html lang="es" class="transition duration-300">
+<html lang="es" class="transition-colors duration-300">
 <head>
   <meta charset="UTF-8">
+  <title>Tarjeta Presentación Cirujano Plástico</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tarjeta Digital 1.0</title>
-  <!-- CDN de Tailwind CSS -->
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class'
-    }
-  </script>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 transition duration-300">
-
-  <!-- Contenedor principal -->
-  <div id="card" class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-8 max-w-sm w-full text-center transition duration-300">
-    
-    <!-- Foto de perfil con borde gradiente fijo -->
-    <div class="flex justify-center mb-6">
-      <div class="relative w-36 h-36 rounded-full p-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500">
-        <img src="glasses.png" 
-             alt="Foto de perfil" 
-             class="w-full h-full rounded-full border-4 border-white dark:border-gray-800 shadow-md object-cover">
-      </div>
-    </div>
-
-    <!-- Nombre y ocupación -->
-    <h1 class="text-2xl font-bold text-gray-900 dark:text-gray-100">Juan Pérez</h1>
-    <p class="text-gray-600 dark:text-gray-300">Desarrollador Front-End</p>
-    <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
-      Apasionado por crear interfaces modernas y funcionales usando HTML, CSS, Tailwind y JavaScript.
+<body class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+  <div id="card" class="p-6 max-w-sm bg-white dark:bg-gray-800 rounded-xl shadow-lg flex flex-col items-center space-y-4 transition-colors duration-500 ease-in-out">
+    <!-- Foto de perfil -->
+    <img class="w-24 h-24 rounded-full object-cover border-4 border-pink-500 shadow-lg" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto de perfil del Dr. Javier Santos">
+    <!-- Código QR (ejemplo: link a una web profesional) -->
+    <img class="w-20 h-20 rounded bg-white p-1" src="https://api.qrserver.com/v1/create-qr-code/?data=https://drjaviersantos.cl&size=200x200" alt="QR">
+    <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100">Dr. Javier Santos</h2>
+    <p class="text-pink-600 dark:text-pink-300 font-semibold">Cirujano Plástico Certificado</p>
+    <p class="text-gray-600 dark:text-gray-300 text-center">
+      Especialista en cirugía estética facial y corporal.<br>
+      Más de 15 años de experiencia realzando tu belleza natural.<br>
+      Miembro Sociedad Chilena de Cirugía Plástica.
     </p>
-
-    <!-- Código QR -->
-    <div class="mt-6 flex justify-center">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.linkedin.com/in/usuario" 
-           alt="Código QR" class="rounded-md shadow-md">
+    <div class="flex flex-col space-y-1 text-sm">
+      <span class="text-gray-700 dark:text-gray-300">📍 Clínica Las Condes, Santiago</span>
+      <span class="text-gray-700 dark:text-gray-300">📞 +56 9 1234 5678</span>
+      <span class="text-gray-700 dark:text-gray-300">✉️ contacto@drjaviersantos.cl</span>
     </div>
-
-    <!-- Iconos de redes sociales -->
-    <div class="mt-6 flex justify-center space-x-6">
-      <a href="https://github.com/usuario" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition">
-        <!-- Icono GitHub -->
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.7 2.1 3.9 1.5v-2.2c0-.3.2-.7.8-.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/>
+    <!-- Íconos sociales SVG personalizados -->
+    <div class="flex space-x-4 mt-2">
+      <a href="https://instagram.com/drjaviersantos" target="_blank" aria-label="Instagram" class="hover:scale-110 transition-transform">
+        <svg width="28" height="28" viewBox="0 0 24 24" class="text-pink-500 dark:text-pink-300" fill="currentColor">
+          <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.206.056 1.85.246 2.283.415a4.33 4.33 0 0 1 1.6.978 4.33 4.33 0 0 1 .978 1.6c.169.433.359 1.077.415 2.283.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.056 1.206-.246 1.85-.415 2.283a4.33 4.33 0 0 1-.978 1.6 4.33 4.33 0 0 1-1.6.978c-.433.169-1.077.359-2.283.415-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.206-.056-1.85-.246-2.283-.415a4.33 4.33 0 0 1-1.6-.978 4.33 4.33 0 0 1-.978-1.6c-.169-.433-.359-1.077-.415-2.283C2.212 15.784 2.2 15.4 2.2 12s.012-3.584.07-4.85c.056-1.206.246-1.85.415-2.283a4.33 4.33 0 0 1 .978-1.6 4.33 4.33 0 0 1 1.6-.978c.433-.169 1.077-.359 2.283-.415C8.416 2.212 8.8 2.2 12 2.2zm0-2.2C8.736 0 8.332.013 7.052.072 5.52.137 4.43.346 3.5.626 2.686.877 2.007 1.236 1.36 1.872.714 2.508.355 3.185.104 4C-.176 4.93-.385 6.02-.45 7.552-.509 8.832-.522 9.236-.522 12c0 2.764.013 3.168.072 4.448.065 1.532.274 2.622.554 3.552.251.815.61 1.492 1.256 2.128.647.636 1.324.995 2.139 1.246.93.27 2.02.479 3.552.544C8.332 23.987 8.736 24 12 24c3.264 0 3.668-.013 4.948-.072 1.532-.065 2.622-.274 3.552-.544.815-.251 1.492-.61 2.128-1.246.646-.636 1.005-1.313 1.256-2.128.28-.93.489-2.02.554-3.552.059-1.28.072-1.684.072-4.448 0-2.764-.013-3.168-.072-4.448C23.942 5.52 23.733 4.43 23.454 3.5c-.251-.815-.61-1.492-1.256-2.128-.646-.636-1.313-.995-2.128-1.246-.93-.28-2.02-.489-3.552-.554C15.668.013 15.264 0 12 0z"/>
+          <path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.163a4.001 4.001 0 1 1 0-8.002 4.001 4.001 0 0 1 0 8.002zm7.844-11.906a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
         </svg>
       </a>
-      <a href="https://linkedin.com/in/usuario" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition">
-        <!-- Icono LinkedIn -->
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1 4.98 2.1 4.98 3.5zM.5 8h4V24h-4V8zm7.5 0h3.7v2.2h.1c.5-.9 1.7-2.2 3.6-2.2 3.9 0 4.6 2.6 4.6 6V24h-4v-8.3c0-2-.1-4.6-2.8-4.6-2.8 0-3.2 2.2-3.2 4.5V24h-4V8z"/>
+      <a href="https://linkedin.com/in/drjaviersantos" target="_blank" aria-label="LinkedIn" class="hover:scale-110 transition-transform">
+        <svg width="28" height="28" fill="currentColor" class="text-blue-600 dark:text-blue-400" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11.5 19h-2.5v-8h2.5v8zm-1.25-9.3c-.88 0-1.5-.62-1.5-1.47s.62-1.48 1.5-1.48 1.5.62 1.5 1.48c0 .85-.62 1.47-1.5 1.47zm13.75 9.3h-2.5v-4.29c0-1-.36-1.69-1.26-1.69-.69 0-1.11.46-1.29.91-.07.17-.08.4-.08.64v4.43h-2.5s.03-7.19 0-8h2.5v1.13c.33-.51.92-1.24 2.24-1.24 1.63 0 2.86 1.06 2.86 3.34v4.77z"/>
         </svg>
       </a>
     </div>
-
-    <!-- Controles -->
-    <div class="mt-8 space-y-4">
-      <!-- Botón de cambio de tema -->
-      <button id="themeToggle" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md shadow transition duration-300">
-        Cambiar Tema
-      </button>
-
-      <!-- Selector de fondo de tarjeta -->
-      <select id="backgroundSelect" class="w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition duration-300">
-        <option value="bg-white dark:bg-gray-800">Fondo Blanco/Gris Oscuro</option>
-        <option value="bg-gradient-to-r from-blue-400 to-purple-500">Gradiente Azul-Púrpura</option>
-        <option value="bg-gradient-to-r from-green-400 to-teal-500">Gradiente Verde-Teal</option>
-        <option value="bg-gradient-to-r from-pink-400 to-red-500">Gradiente Rosa-Rojo</option>
-      </select>
+    <!-- Botón toggle claro/oscuro -->
+    <button id="toggle-theme" class="mt-4 px-4 py-2 rounded bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100 transition duration-300 shadow">Alternar Claro/Oscuro</button>
+    <!-- Botones para cambiar fondo -->
+    <div class="flex gap-2 mt-2">
+      <button data-bg="bg-white dark:bg-gray-800" class="px-3 py-1 rounded bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-200 transition">Base</button>
+      <button data-bg="bg-gradient-to-r from-purple-400 to-pink-400 dark:from-purple-700 dark:to-pink-800" class="px-3 py-1 rounded bg-purple-200 dark:bg-purple-700 text-purple-700 dark:text-purple-200 transition">Gradiente</button>
+      <button data-bg="bg-blue-100 dark:bg-blue-800" class="px-3 py-1 rounded bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-200 transition">Azul</button>
     </div>
   </div>
-
   <script>
-    const themeToggle = document.getElementById('themeToggle');
-    const backgroundSelect = document.getElementById('backgroundSelect');
-    const htmlElement = document.documentElement;
+    const btnTheme = document.getElementById('toggle-theme');
     const card = document.getElementById('card');
-
-    // Botón de cambio de tema
-    themeToggle.addEventListener('click', () => {
-      htmlElement.classList.toggle('dark');
-      if (htmlElement.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-      } else {
-        localStorage.setItem('theme', 'light');
-      }
-    });
-
-    // Aplicar tema guardado
+    // Persistencia modo claro/oscuro
     if (localStorage.getItem('theme') === 'dark') {
-      htmlElement.classList.add('dark');
+      document.documentElement.classList.add('dark');
     }
-
-    // Cambio de fondo de la tarjeta
-    backgroundSelect.addEventListener('change', (e) => {
-      card.className = "shadow-lg rounded-xl p-8 max-w-sm w-full text-center transition duration-300";
-      card.classList.add(...e.target.value.split(" "));
+    btnTheme.addEventListener('click', function () {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem(
+        'theme',
+        document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+      );
     });
+    // Cambiar fondo con animación
+    document.querySelectorAll('[data-bg]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        card.classList.add('opacity-0');
+        setTimeout(() => {
+          card.className = 'p-6 max-w-sm rounded-xl shadow-lg flex flex-col items-center space-y-4 transition-colors duration-500 ease-in-out';
+          card.classList.add(...btn.getAttribute('data-bg').split(' '));
+          card.classList.remove('opacity-0');
+        }, 300);
+      });
+    });
+    card.classList.add('bg-white', 'dark:bg-gray-800');
   </script>
 </body>
 </html>
-
-
