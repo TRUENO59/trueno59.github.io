@@ -11,26 +11,16 @@
       darkMode: 'class'
     }
   </script>
-  <style>
-    /* Animación personalizada para el borde gradiente */
-    @keyframes spin-slow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    .animate-spin-slow {
-      animation: spin-slow 10s linear infinite;
-    }
-  </style>
 </head>
 <body class="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 transition duration-300">
 
   <!-- Contenedor principal -->
   <div id="card" class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-8 max-w-sm w-full text-center transition duration-300">
     
-    <!-- Foto de perfil con borde gradiente animado -->
+    <!-- Foto de perfil con borde gradiente fijo -->
     <div class="flex justify-center mb-6">
-      <div class="relative w-36 h-36 rounded-full p-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 animate-spin-slow">
-        <img src="Carlitos.png" 
+      <div class="relative w-36 h-36 rounded-full p-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500">
+        <img src="glasses.png" 
              alt="Foto de perfil" 
              class="w-full h-full rounded-full border-4 border-white dark:border-gray-800 shadow-md object-cover">
       </div>
