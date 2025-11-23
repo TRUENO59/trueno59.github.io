@@ -154,6 +154,17 @@ body {
     transform: translate(10%, 10%); /* Shift it slightly */
 }
 
+/* Animación para gradiente cambiante */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
 /* Media Query for smaller screens (making it responsive) */
 @media (max-width: 450px) {
     .business-card {
@@ -196,3 +207,4 @@ body {
     }
 
 }
+
