@@ -1,4 +1,4 @@
-  <script>
+
     const btnTheme = document.getElementById('toggle-theme');
     const card = document.getElementById('card');
     // Persistencia modo claro/oscuro
@@ -42,4 +42,4 @@
       }
     }
     
-  </script>
+
