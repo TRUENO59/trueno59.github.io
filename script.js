@@ -1,18 +1,45 @@
-const card = document.querySelector('.business-card');
-
-if (card) {
-    card.addEventListener('mousemove', (e) => {
-        const { offsetWidth: width, offsetHeight: height } = card;
-        const { offsetX: x, offsetY: y } = e;
-
-        // Calculate rotation based on cursor position
-        const rotationX = ((y / height) * -15) + 7.5; // Tilt up/down
-        const rotationY = ((x / width) * 15) - 7.5;   // Tilt left/right
-
-        card.style.transform = `perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+  <script>
+    const btnTheme = document.getElementById('toggle-theme');
+    const card = document.getElementById('card');
+    // Persistencia modo claro/oscuro
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+    btnTheme.addEventListener('click', function () {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem(
+        'theme',
+        document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+      );
     });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+    // Cambiar fondo con animación
+    document.querySelectorAll('[data-bg]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        card.classList.add('opacity-0');
+        setTimeout(() => {
+          card.className = 'p-6 max-w-sm rounded-xl shadow-lg flex flex-col items-center space-y-4 transition-colors duration-500 ease-in-out';
+          card.classList.add(...btn.getAttribute('data-bg').split(' '));
+          card.classList.remove('opacity-0');
+        }, 300);
+      });
     });
-}
+    card.classList.add('bg-white', 'dark:bg-gray-800');
+// 
+    function setCardBackground(type, value) {
+      // Reset
+      card.style.backgroundColor = '';
+      card.style.backgroundImage = '';
+      card.classList.remove('has-image', 'dark-mode');
+
+      if (type === 'solid') {
+        card.style.backgroundColor = value;
+        if (value === '#1e293b') {
+          card.classList.add('dark-mode');
+        }
+      } else if (type === 'image') {
+        card.style.backgroundImage = `url(${value})`;
+        card.classList.add('has-image');
+      }
+    }
+    
+  </script>
