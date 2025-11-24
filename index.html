@@ -9,11 +9,7 @@
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script>
-    tailwind.config = {
-      darkMode: 'class'
-    }
-  </script>
+  <script> tailwind.config = { darkMode: 'class' } </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
       .dark-mode-transition {
@@ -39,7 +35,8 @@
       </div>
     <!-- Encabezado con botón de tema -->
     <div class="flex justify-between items-start mb-6">
-        <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Tarjeta de Presentación</h1>
+        <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Dr. Jean Acevedo</h1>
+        <p class="text-pink-600 dark:text-pink-300 font-semibold">Cirujano Plástico</p>
         <button id="theme-toggle" class="dark-mode-transition bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-full p-2">
             <i id="theme-icon" class="fas fa-moon text-gray-700 dark:text-yellow-300"></i>
         </button>
@@ -81,32 +78,28 @@
       <button data-bg="bg-gradient-to-r from-purple-400 to-pink-400 dark:from-purple-700 dark:to-pink-800" class="px-3 py-1 rounded bg-purple-200 dark:bg-purple-700 text-purple-700 dark:text-purple-200 transition">Gradiente</button>
       <button data-bg="bg-blue-100 dark:bg-blue-800" class="px-3 py-1 rounded bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-200 transition">Azul</button>
     </div>
-  </div>
     <!-- Controles -->
-  <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex flex-wrap gap-2">
-    <button onclick="setCardBackground('solid', '#ffffff')" class="w-6 h-6 rounded-full bg-white border border-gray-400" title="Blanco"></button>
-    <button onclick="setCardBackground('solid', '#1e293b')" class="w-6 h-6 rounded-full bg-slate-800" title="Oscuro"></button>
-    <button onclick="setCardBackground('solid', '#dbf4ff')" class="w-6 h-6 rounded-full bg-blue-100" title="Azul claro"></button>
-
-    <!-- Fondos con imagen -->
-    <button onclick="setCardBackground('image', 'https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80')" 
-            class="w-6 h-6 rounded-full bg-cover bg-center border-2 border-white shadow"
-            style="background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?q=50&h=32');"
-            title="Montañas"></button>
-    <button onclick="setCardBackground('image', 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80')"
-            class="w-6 h-6 rounded-full bg-cover bg-center border-2 border-white shadow"
-            style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=50&h=32');"
-            title="Cielo"></button>
-
-    <!-- Botón para subir imagen personal -->
-    <label class="upload-btn cursor-pointer">Subir
-      <input type="file" id="bgImageUpload" accept="image/*" class="hidden" />
-    </label>
+    <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex flex-wrap gap-2">
+      <button onclick="setCardBackground('solid', '#ffffff')" class="w-6 h-6 rounded-full bg-white border border-gray-400" title="Blanco"></button>
+      <button onclick="setCardBackground('solid', '#1e293b')" class="w-6 h-6 rounded-full bg-slate-800" title="Oscuro"></button>
+      <button onclick="setCardBackground('solid', '#dbf4ff')" class="w-6 h-6 rounded-full bg-blue-100" title="Azul claro"></button>
+  
+      <!-- Fondos con imagen -->
+      <button onclick="setCardBackground('image', 'https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80')" 
+              class="w-6 h-6 rounded-full bg-cover bg-center border-2 border-white shadow"
+              style="background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?q=50&h=32');"
+              title="Montañas"></button>
+      <button onclick="setCardBackground('image', 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80')"
+              class="w-6 h-6 rounded-full bg-cover bg-center border-2 border-white shadow"
+              style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=50&h=32');"
+              title="Cielo"></button>
+  
+      <!-- Botón para subir imagen personal -->
+      <label class="upload-btn cursor-pointer">Subir
+        <input type="file" id="bgImageUpload" accept="image/*" class="hidden" />
+      </label>
+    </div>
+    <script src="script.js" defer></script>
   </div>
-      <script src="script.js" defer></script>
 </body>
 </html>
-
-
-
-
