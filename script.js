@@ -1,4 +1,3 @@
-
     const btnTheme = document.getElementById('toggle-theme');
     const card = document.getElementById('card');
     // Persistencia modo claro/oscuro
@@ -42,4 +41,30 @@
       }
     }
     
+// Toggle del tema oscuro
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+
+        // Comprobar tema guardado o preferencia del sistema
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (savedTheme === 'dark') {
+            htmlElement.classList.add('dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
 
