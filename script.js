@@ -1,28 +1,49 @@
-    const btnTheme = document.getElementById('toggle-theme');
-    const card = document.getElementById('card');
-    // Persistencia modo claro/oscuro
-    if (localStorage.getItem('theme') === 'dark') {
-      document.documentElement.classList.add('dark');
+// script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const html = document.documentElement; // El elemento <html>
+
+    // Constantes para las clases
+    const darkClass = 'dark';
+    const moonIcon = 'fas fa-moon';
+    const sunIcon = 'fas fa-sun';
+
+    // Función para actualizar la interfaz (clase HTML e ícono)
+    function updateTheme(isDark) {
+        if (isDark) {
+            html.classList.add(darkClass);
+            themeIcon.className = sunIcon + ' text-yellow-300'; // Sol para modo oscuro
+        } else {
+            html.classList.remove(darkClass);
+            themeIcon.className = moonIcon + ' text-gray-700'; // Luna para modo claro
+        }
     }
-    btnTheme.addEventListener('click', function () {
-      document.documentElement.classList.toggle('dark');
-      localStorage.setItem(
-        'theme',
-        document.documentElement.classList.contains('dark') ? 'dark' : 'light'
-      );
+
+    // 1. Cargar preferencia guardada
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        // Si la preferencia es 'dark' O no hay preferencia guardada y el sistema prefiere oscuro
+        updateTheme(true);
+    } else {
+        // Por defecto o si la preferencia es 'light'
+        updateTheme(false);
+    }
+
+    // 2. Manejar el evento de clic
+    themeToggle.addEventListener('click', () => {
+        const isCurrentlyDark = html.classList.contains(darkClass);
+        
+        // Alternar el tema
+        updateTheme(!isCurrentlyDark);
+        
+        // Guardar la nueva preferencia
+        localStorage.setItem('theme', isCurrentlyDark ? 'light' : 'dark');
     });
-    // Cambiar fondo con animación
-    document.querySelectorAll('[data-bg]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        card.classList.add('opacity-0');
-        setTimeout(() => {
-          card.className = 'p-6 max-w-sm rounded-xl shadow-lg flex flex-col items-center space-y-4 transition-colors duration-500 ease-in-out';
-          card.classList.add(...btn.getAttribute('data-bg').split(' '));
-          card.classList.remove('opacity-0');
-        }, 300);
-      });
-    });
-    card.classList.add('bg-white', 'dark:bg-gray-800');
+});
+
 // 
     function setCardBackground(type, value) {
       // Reset
@@ -40,31 +61,3 @@
         card.classList.add('has-image');
       }
     }
-    
-// Toggle del tema oscuro
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-        const htmlElement = document.documentElement;
-
-        // Comprobar tema guardado o preferencia del sistema
-        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        if (savedTheme === 'dark') {
-            htmlElement.classList.add('dark');
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-        }
-
-        themeToggle.addEventListener('click', () => {
-            htmlElement.classList.toggle('dark');
-            
-            if (htmlElement.classList.contains('dark')) {
-                localStorage.setItem('theme', 'dark');
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-            } else {
-                localStorage.setItem('theme', 'light');
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-            }
-        });
-
