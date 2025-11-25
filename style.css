@@ -1,210 +1,22 @@
-/* General Setup */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0; /* Light background for the page */
-    font-family: Arial, sans-serif;
-}
-        .dark-mode-transition {
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .card-shadow {
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .dark .card-shadow {
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-        }
-/* Card Container */
-.business-card {
-    position: relative;
-    width: 380px; /* Standard business card width */
-    height: 220px; /* Standard business card height */
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    color: #ffffff;
-    display: grid;
-    grid-template-columns: 2fr 1fr; /* Split into two main columns */
-    transition: transform 0.3s ease-out; /* Smooth transition for the tilt effect */
-}
+/* style.css */
 
-/* Background Effect (approximating the image's dark, coded look) */
-.background-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #0d0d4d 0%, #3a005c 100%); /* Deep blue/purple gradient */
-    z-index: 1;
-}
-
-/* Header Content (Logos, Name, Title) */
-.card-header {
-    position: relative;
-    padding: 15px;
-    z-index: 2;
-    grid-column: 1 / 2;
-}
-
-.logo-icons {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 5px;
-}
-
-.tech-logo {
-    width: 24px; /* Adjust as needed */
-    height: 24px;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
-}
-
-.card-header h1 {
-    font-size: 24px;
-    margin: 0 0 3px 0;
-    font-weight: bold;
-}
-
-.card-header .title {
-    font-size: 16px;
-    margin: 0;
-    font-weight: bold;
-    color: #ffd700; /* Gold/Yellow accent color */
-}
-
-/* Contact Info Section */
-.contact-info {
-    position: relative;
-    padding: 0 15px 15px 15px;
-    z-index: 2;
-    grid-column: 1 / 2;
-    align-self: end; /* Stick to the bottom */
-}
-
-.separator {
-    width: 90%;
-    height: 3px;
-    background-color: #ffd700; /* Gold/Yellow line */
-    margin: 5px 0 10px 0;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 4px;
-    font-size: 14px;
-}
-
-.contact-item .icon {
-    margin-right: 8px;
-    font-size: 16px;
-}
-
-.contact-item a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.contact-item a:hover {
-    color: #ffd700;
-}
-
-/* Profile Photo Section (The most complex part) */
-.profile-photo-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%; /* Takes up the right half */
-    height: 100%;
-    z-index: 3; /* Must be above the background overlay */
-    overflow: hidden;
-}
-
-.profile-photo {
-    position: absolute;
-    /* Adjustments to align the photo within the crescent/circle */
-    top: 50%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    width: 190px;
-    height: 190px;
-    object-fit: cover;
-    border-radius: 50%; /* Creates the main circular shape */
-    border: 10px solid #cc9900; /* Approximates the gold border/background of the photo area */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    /* Use a mix of clip-path and border to get the effect, or simpler: */
-    /* Clip-path is a more advanced technique for this shape, a simple circle with a container border is easier */
-}
-
-/* Faux Crescent/Clipped Effect for Photo */
-.profile-photo-container::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 250px;
-    height: 250px;
-    background-color: #cc9900; /* Gold/Orange background for the visible part of the photo area */
-    border-radius: 50%;
-    z-index: -1; /* Place it behind the photo, but above the card's main background */
-    transform: translate(10%, 10%); /* Shift it slightly */
-}
-
-/* Animación para gradiente cambiante */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradientShift 8s ease infinite;
-}
-
-/* Media Query for smaller screens (making it responsive) */
-@media (max-width: 450px) {
-    .business-card {
-        width: 90vw;
-        height: auto;
-        grid-template-columns: 1fr;
+/* Animación de keyframes para el gradiente */
+@keyframes gradient-border {
+    0% {
+        background-position: 0% 50%;
     }
-    .profile-photo-container {
-        position: static;
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 15px;
+    50% {
+        background-position: 100% 50%;
     }
-    .profile-photo {
-        position: static;
-        transform: none;
-        width: 120px;
-        height: 120px;
-        border-width: 5px;
+    100% {
+        background-position: 0% 50%;
     }
-    .profile-photo-container::before {
-        content: none; /* Hide the complex crescent on small screens */
-    }
-    .card-header, .contact-info {
-        grid-column: 1 / 2;
-        text-align: center;
-    }
-    .contact-info {
-        padding-top: 0;
-    }
-    .contact-item {
-        justify-content: center;
-    }
-    .separator {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
 }
 
+/* Aplica la animación al contenedor del perfil */
+.animate-gradient-border {
+    /* Define el tamaño del gradiente para que la animación sea visible */
+    background-size: 200% 200%; 
+    /* Aplica la animación: nombre, duración, repetición infinita */
+    animation: gradient-border 4s ease infinite;
+}
