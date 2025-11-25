@@ -1,105 +1,96 @@
 <!DOCTYPE html>
 <html lang="es" class="transition-colors duration-300">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tarjeta Presentación Cirujano Plástico</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script> tailwind.config = { darkMode: 'class' } </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-      .dark-mode-transition {
-          transition: background-color 0.3s ease, color 0.3s ease;
-      }
-      .card-shadow {
-          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      }
-      .dark .card-shadow {
-          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-      }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Presentación Cirujano Plástico</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuración de Tailwind para usar el modo oscuro basado en la clase 'dark'
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
 </head>
-<body class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
-  <!-- Contenedor principal -->
-  <div id="card" class="p-6 max-w-sm bg-white dark:bg-gray-800 rounded-xl shadow-lg flex flex-col items-center space-y-4 transition-colors duration-500 ease-in-out">
-    <!-- Foto de perfil con borde gradiente animado suave -->
-    <div class="flex justify-center mb-6">
-      <div class="relative w-36 h-36 rounded-full p-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 animate-gradient">
-        <img src="glasses.png" 
-             alt="Foto de perfil" 
-             class="w-full h-full rounded-full border-4 border-white dark:border-gray-800 shadow-md object-cover">
-      </div>
-    <!-- Encabezado con botón de tema -->
-    <div class="flex justify-between items-start mb-6">
-        <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Dr. Jean Acevedo</h1>
-        <p class="text-pink-600 dark:text-pink-300 font-semibold">Cirujano Plástico</p>
-        <button id="theme-toggle" class="dark-mode-transition bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-full p-2">
-            <i id="theme-icon" class="fas fa-moon text-gray-700 dark:text-yellow-300"></i>
-        </button>
+
+<body
+    class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+
+    <div id="card"
+        class="p-6 max-w-sm w-full bg-white dark:bg-gray-800 rounded-xl shadow-2xl flex flex-col items-center space-y-4 transition-colors duration-500 ease-in-out border border-gray-200 dark:border-gray-700">
+
+        <div class="w-full flex justify-end">
+            <button id="theme-toggle"
+                class="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-full p-2 transition-colors duration-300">
+                <i id="theme-icon" class="fas fa-moon text-gray-700 dark:text-yellow-300"></i>
+            </button>
+        </div>
+
+        <div class="relative w-36 h-36 rounded-full p-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 animate-gradient-border">
+            <img src="glasses.png" alt="Foto de perfil del Dr. Jean Acevedo"
+                class="w-full h-full rounded-full border-4 border-white dark:border-gray-800 shadow-lg object-cover">
+        </div>
+
+        <div class="text-center space-y-1 mt-4">
+            <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white">Dr. Jean Acevedo</h2>
+            <p class="text-xl text-pink-600 dark:text-pink-400 font-semibold">Cirujano Plástico</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 pt-2">Especialista en Cirugía Estética y Reconstructiva</p>
+        </div>
+
+        <div class="w-full flex justify-center space-x-6 pt-4 border-t border-gray-100 dark:border-gray-700">
+            <a href="#" class="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                <i class="fas fa-phone text-2xl" title="Llamar"></i>
+            </a>
+            <a href="#" class="text-green-500 hover:text-green-600 dark:text-green-400 dark:hover:text-green-300 transition-colors">
+                <i class="fab fa-whatsapp text-2xl" title="WhatsApp"></i>
+            </a>
+            <a href="#" class="text-pink-600 hover:text-pink-700 dark:text-pink-400 dark:hover:text-pink-300 transition-colors">
+                <i class="fab fa-instagram text-2xl" title="Instagram"></i>
+            </a>
+            <a href="#" class="text-blue-700 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400 transition-colors">
+                <i class="fab fa-facebook-f text-2xl" title="Facebook"></i>
+            </a>
+            <a href="#" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                <i class="fab fa-linkedin-in text-2xl" title="LinkedIn"></i>
+            </a>
+        </div>
+
+        <!-- Código QR (ejemplo: link a una web profesional) -->
+        <img class="w-24 h-24 rounded bg-white p-1" src="https://api.qrserver.com/v1/create-qr-code/?data=trueno59.github.io&size=200x200" alt="QR">   
+        <p class="text-sm text-gray-600 dark:text-gray-300 text-center">
+        Más de 15 años realzando tu belleza natural.<br>
+        Miembro Sociedad Venezolana de Cirugía Plástica.
+        </p>
+
+        <div class="flex flex-col space-y-1 text-sm">
+            <span class="text-gray-700 dark:text-gray-300">📍 Clínica Sthory Ruiz, La Candelaria</span>
+            <span class="text-gray-700 dark:text-gray-300">📞 (0416) 622 6007 </span>
+            <span class="text-gray-700 dark:text-gray-300">✉️ correo@drjeanacevedo</span>
+        </div>
+
+        <!-- Controles -->
+        <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex flex-wrap gap-2">
+            <button onclick="setCardBackground('solid', '#ffffff')" class="w-6 h-6 rounded-full bg-white border border-gray-400" title="Blanco"></button>
+            <button onclick="setCardBackground('solid', '#1e293b')" class="w-6 h-6 rounded-full bg-slate-800" title="Oscuro"></button>
+            <button onclick="setCardBackground('solid', '#dbf4ff')" class="w-6 h-6 rounded-full bg-blue-100" title="Azul claro"></button>
+        
+            <!-- Fondos con imagen -->
+            <button onclick="setCardBackground('image', 'https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80')" 
+                    class="w-6 h-6 rounded-full bg-cover bg-center border-2 border-white shadow"
+                    style="background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?q=50&h=32');"
+                    title="Montañas"></button>
+            <button onclick="setCardBackground('image', 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80')"
+                    class="w-6 h-6 rounded-full bg-cover bg-center border-2 border-white shadow"
+                    style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=50&h=32');"
+                    title="Cielo"></button>
+        </div>
+
     </div>
-    </div>
-    <!-- Código QR (ejemplo: link a una web profesional) -->
-    <img class="w-24 h-24 rounded bg-white p-1" src="https://api.qrserver.com/v1/create-qr-code/?data=trueno59.github.io&size=200x200" alt="QR">
-    <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100">Dr. Jean Acevedo</h2>
-    <p class="text-pink-600 dark:text-pink-300 font-semibold">Cirujano Plástico</p>
-    <p class="text-gray-600 dark:text-gray-300 text-center">
-      Especialista en cirugía estética facial y corporal.<br>
-      Más de 15 años de experiencia realzando tu belleza natural.<br>
-      Miembro Sociedad Venezolana de Cirugía Plástica.
-    </p>
-    <div class="flex flex-col space-y-1 text-sm">
-      <span class="text-gray-700 dark:text-gray-300">📍 Clínica Sthory Ruiz, La Candelaria</span>
-      <span class="text-gray-700 dark:text-gray-300">📞 (0416) 622 6007 </span>
-      <span class="text-gray-700 dark:text-gray-300">✉️ correo@drjeanacevedo</span>
-    </div>
-    <!-- Íconos sociales SVG personalizados -->
-    <div class="flex space-x-4 mt-2">
-      <a href="https://instagram.com/drjaviersantos" target="_blank" aria-label="Instagram" class="hover:scale-110 transition-transform">
-        <svg width="28" height="28" viewBox="0 0 24 24" class="text-pink-500 dark:text-pink-300" fill="currentColor">
-          <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.206.056 1.85.246 2.283.415a4.33 4.33 0 0 1 1.6.978 4.33 4.33 0 0 1 .978 1.6c.169.433.359 1.077.415 2.283.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.056 1.206-.246 1.85-.415 2.283a4.33 4.33 0 0 1-.978 1.6 4.33 4.33 0 0 1-1.6.978c-.433.169-1.077.359-2.283.415-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.206-.056-1.85-.246-2.283-.415a4.33 4.33 0 0 1-1.6-.978 4.33 4.33 0 0 1-.978-1.6c-.169-.433-.359-1.077-.415-2.283C2.212 15.784 2.2 15.4 2.2 12s.012-3.584.07-4.85c.056-1.206.246-1.85.415-2.283a4.33 4.33 0 0 1 .978-1.6 4.33 4.33 0 0 1 1.6-.978c.433-.169 1.077-.359 2.283-.415C8.416 2.212 8.8 2.2 12 2.2zm0-2.2C8.736 0 8.332.013 7.052.072 5.52.137 4.43.346 3.5.626 2.686.877 2.007 1.236 1.36 1.872.714 2.508.355 3.185.104 4C-.176 4.93-.385 6.02-.45 7.552-.509 8.832-.522 9.236-.522 12c0 2.764.013 3.168.072 4.448.065 1.532.274 2.622.554 3.552.251.815.61 1.492 1.256 2.128.647.636 1.324.995 2.139 1.246.93.27 2.02.479 3.552.544C8.332 23.987 8.736 24 12 24c3.264 0 3.668-.013 4.948-.072 1.532-.065 2.622-.274 3.552-.544.815-.251 1.492-.61 2.128-1.246.646-.636 1.005-1.313 1.256-2.128.28-.93.489-2.02.554-3.552.059-1.28.072-1.684.072-4.448 0-2.764-.013-3.168-.072-4.448C23.942 5.52 23.733 4.43 23.454 3.5c-.251-.815-.61-1.492-1.256-2.128-.646-.636-1.313-.995-2.128-1.246-.93-.28-2.02-.489-3.552-.554C15.668.013 15.264 0 12 0z"/>
-          <path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.163a4.001 4.001 0 1 1 0-8.002 4.001 4.001 0 0 1 0 8.002zm7.844-11.906a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
-        </svg>
-      </a>
-      <a href="https://linkedin.com/in/drjaviersantos" target="_blank" aria-label="LinkedIn" class="hover:scale-110 transition-transform">
-        <svg width="28" height="28" fill="currentColor" class="text-blue-600 dark:text-blue-400" viewBox="0 0 24 24">
-          <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11.5 19h-2.5v-8h2.5v8zm-1.25-9.3c-.88 0-1.5-.62-1.5-1.47s.62-1.48 1.5-1.48 1.5.62 1.5 1.48c0 .85-.62 1.47-1.5 1.47zm13.75 9.3h-2.5v-4.29c0-1-.36-1.69-1.26-1.69-.69 0-1.11.46-1.29.91-.07.17-.08.4-.08.64v4.43h-2.5s.03-7.19 0-8h2.5v1.13c.33-.51.92-1.24 2.24-1.24 1.63 0 2.86 1.06 2.86 3.34v4.77z"/>
-        </svg>
-      </a>
-    </div>
-    <!-- Botón toggle claro/oscuro -->
-    <button id="toggle-theme" class="mt-4 px-4 py-2 rounded bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100 transition duration-300 shadow">Alternar Claro/Oscuro</button>
-    <!-- Botones para cambiar fondo -->
-    <div class="flex gap-2 mt-2">
-      <button data-bg="bg-white dark:bg-gray-800" class="px-3 py-1 rounded bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-200 transition">Base</button>
-      <button data-bg="bg-gradient-to-r from-purple-400 to-pink-400 dark:from-purple-700 dark:to-pink-800" class="px-3 py-1 rounded bg-purple-200 dark:bg-purple-700 text-purple-700 dark:text-purple-200 transition">Gradiente</button>
-      <button data-bg="bg-blue-100 dark:bg-blue-800" class="px-3 py-1 rounded bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-200 transition">Azul</button>
-    </div>
-    <!-- Controles -->
-    <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex flex-wrap gap-2">
-      <button onclick="setCardBackground('solid', '#ffffff')" class="w-6 h-6 rounded-full bg-white border border-gray-400" title="Blanco"></button>
-      <button onclick="setCardBackground('solid', '#1e293b')" class="w-6 h-6 rounded-full bg-slate-800" title="Oscuro"></button>
-      <button onclick="setCardBackground('solid', '#dbf4ff')" class="w-6 h-6 rounded-full bg-blue-100" title="Azul claro"></button>
-  
-      <!-- Fondos con imagen -->
-      <button onclick="setCardBackground('image', 'https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80')" 
-              class="w-6 h-6 rounded-full bg-cover bg-center border-2 border-white shadow"
-              style="background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?q=50&h=32');"
-              title="Montañas"></button>
-      <button onclick="setCardBackground('image', 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80')"
-              class="w-6 h-6 rounded-full bg-cover bg-center border-2 border-white shadow"
-              style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=50&h=32');"
-              title="Cielo"></button>
-  
-      <!-- Botón para subir imagen personal -->
-      <label class="upload-btn cursor-pointer">Subir
-        <input type="file" id="bgImageUpload" accept="image/*" class="hidden" />
-      </label>
-    </div>
+
     <script src="script.js" defer></script>
-  </div>
 </body>
+
 </html>
